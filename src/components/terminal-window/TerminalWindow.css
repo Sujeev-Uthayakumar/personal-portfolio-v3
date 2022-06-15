@@ -1,54 +1,71 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+  background-color: #555;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #555;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgb(129, 129, 129);
 }
 
 body {
-  background-color: black;
   height: 100vh;
   display: flex;
-
-  align-items: center;
   justify-content: center;
-}
-
-a {
-  text-decoration: none;
-  font-size: 13px;
+  align-items: center;
+  background-color: black;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 800px;
-  overflow: hidden;
+  width: 90vw;
+
+  max-width: 850px;
   height: 500px;
-  border: 1px gray solid;
-  border-radius: 6px;
-  margin: 20px;
+  overflow: hidden;
+  border-radius: 7px;
+  border: 1px solid gray;
+  cursor: text;
 }
 
-.menu {
+.top-bar {
   display: flex;
-  height: 20px;
-  background-color: white;
-  border-radius: 6px 6px 0px 0px;
-  padding: 8px 0px 0px 8px;
+  align-items: center;
+  width: 100%;
+  background-color: #424040;
+  padding: 8px;
+  height: 24px;
 }
 
-.button-flex {
-  display: flex;
+.button-container {
   position: absolute;
+  display: flex;
   flex-direction: row;
 }
 
-.menu .button {
+.button {
+  cursor: pointer;
+  background-color: white;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  margin-right: 8px;
-  cursor: pointer;
+  margin: 2px;
 }
 
 .red {
@@ -61,4 +78,100 @@ a {
 
 .green {
   background-color: #47d043;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 13px;
+  color: #9c9c9c;
+}
+/* Review this after */
+p {
+  font-size: 16px;
+  color: rgb(238, 238, 238);
+  padding: 8px 0;
+}
+
+h2 {
+  font-size: 16px;
+  color: rgb(238, 238, 238);
+}
+
+p.code {
+  color: #66c2cd;
+  margin-left: 8px;
+}
+
+span.text {
+  margin-left: 16px;
+  color: white;
+}
+
+p.path {
+  color: #f7fca0;
+}
+
+p.path span {
+  color: #6a77d2;
+}
+
+p.path span + span {
+  color: #9ceaf3;
+}
+
+.sucess {
+  color: #5ad786;
+}
+
+.error {
+  color: #f78f85;
+}
+
+p.response {
+  color: rgb(238, 238, 238);
+}
+
+input {
+  border: none;
+  background-color: unset;
+  color: rgb(238, 238, 238);
+  width: 100%;
+  font-size: 16px;
+  font-family: "Fira Code", monospace;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: unset;
+}
+
+.type {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.type2 {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.icone {
+  color: #5ad786;
+  padding-right: 8px;
+}
+
+.icone.error {
+  color: #f78f85;
 }
