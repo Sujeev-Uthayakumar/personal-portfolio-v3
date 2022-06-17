@@ -23,6 +23,18 @@ export default class TerminalWindow extends React.Component {
     this.createCode("all", "See all commands.");
     this.createCode("social -a", "All my social networks.");
 
+    this.createCode("about me", "Who am i and what do i do.");
+    this.createCode("all", "See all commands.");
+    this.createCode("social -a", "All my social networks.");
+
+    this.createCode("about me", "Who am i and what do i do.");
+    this.createCode("all", "See all commands.");
+    this.createCode("social -a", "All my social networks.");
+
+    this.createCode("about me", "Who am i and what do i do.");
+    this.createCode("all", "See all commands.");
+    this.createCode("social -a", "All my social networks.");
+
     await delay(500);
     this.newLine();
   };
