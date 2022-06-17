@@ -14,22 +14,10 @@ export default class TerminalWindow extends React.Component {
 
   onStartTerminal = async () => {
     this.createText("Welcome");
-    await delay(700);
+    await delay(1000);
     this.createText("Starting the server...");
-    await delay(1500);
+    await delay(1250);
     this.createText("You can run several commands:");
-
-    this.createCode("about me", "Who am i and what do i do.");
-    this.createCode("all", "See all commands.");
-    this.createCode("social -a", "All my social networks.");
-
-    this.createCode("about me", "Who am i and what do i do.");
-    this.createCode("all", "See all commands.");
-    this.createCode("social -a", "All my social networks.");
-
-    this.createCode("about me", "Who am i and what do i do.");
-    this.createCode("all", "See all commands.");
-    this.createCode("social -a", "All my social networks.");
 
     this.createCode("about me", "Who am i and what do i do.");
     this.createCode("all", "See all commands.");
@@ -57,6 +45,7 @@ export default class TerminalWindow extends React.Component {
     i.setAttribute("class", "fas fa-angle-right icone");
     const input = document.createElement("input");
     input.setAttribute("id", "terminalInput");
+    input.setAttribute("autocomplete", "off");
     div.appendChild(i);
     div.appendChild(input);
     this.element.appendChild(div);
@@ -72,11 +61,17 @@ export default class TerminalWindow extends React.Component {
       await delay(1000);
 
       this.newLine();
-      console.log("hi");
     }
   };
 
-  getInputValue = () => {};
+  getInputValue = () => {
+    const inputValue = document.querySelector("#terminalInput");
+    console.log(inputValue.value);
+  };
+
+  removeInput = () => {
+    
+  };
 
   createText(text) {
     const p = document.createElement("p");
