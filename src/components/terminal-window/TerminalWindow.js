@@ -6,16 +6,18 @@ export default class TerminalWindow extends React.Component {
   state = {};
   element = null;
 
-  componentDidMount() {
+  componentWillUnmount() {
     document.addEventListener("keydown", this.onEnter);
     this.onStartTerminal();
+  }
+  componentDidMount() {
     this.element = document.querySelector("#app");
   }
 
   onStartTerminal = async () => {
     this.createText("Welcome");
     await delay(1000);
-    this.createText("Starting the server...");
+    this.createText("Starting the server ...");
     await delay(1250);
     this.createText("You can run several commands:");
 
@@ -53,23 +55,32 @@ export default class TerminalWindow extends React.Component {
   };
 
   onEnter = async (event) => {
-    if (event.key === "Enter") {
-      await delay(1000);
+    const inputValue = document.querySelector("#terminalInput").value;
+    if (event.key === "Enter" && inputValue) {
+      await delay(750);
       this.getInputValue();
 
       this.removeInput();
-      await delay(1000);
+      await delay(750);
 
       this.newLine();
     }
   };
 
   getInputValue = () => {
-    const inputValue = document.querySelector("#terminalInput");
-    console.log(inputValue.value);
+    const inputValue = document.querySelector("#terminalInput").value;
+    if (inputValue) {
+      this.createCode(inputValue, "test");
+      console.log(inputValue);
+    }
   };
 
-  removeInput = () => {};
+  removeInput = () => {
+    const div = document.querySelector(".type");
+    if (div) {
+      div.remove();
+    }
+  };
 
   createText(text) {
     const p = document.createElement("p");

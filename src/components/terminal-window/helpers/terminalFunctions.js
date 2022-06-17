@@ -6,6 +6,5 @@ export const containerFocus = () => {
   const input = document.querySelector("#terminalInput");
   if (input) {
     input.focus();
-    input.select();
   }
 };
