@@ -69,9 +69,7 @@ export default class TerminalWindow extends React.Component {
     console.log(inputValue.value);
   };
 
-  removeInput = () => {
-    
-  };
+  removeInput = () => {};
 
   createText(text) {
     const p = document.createElement("p");
