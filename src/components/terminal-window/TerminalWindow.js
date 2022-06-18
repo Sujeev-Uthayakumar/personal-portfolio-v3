@@ -3,7 +3,7 @@ import { delay, containerFocus } from "./helpers/terminalFunctions";
 import "./TerminalWindow.css";
 
 export default class TerminalWindow extends React.Component {
-  state = {};
+  state = { path: "" };
   element = null;
 
   componentWillUnmount() {
@@ -15,21 +15,20 @@ export default class TerminalWindow extends React.Component {
   }
 
   onStartTerminal = async () => {
-    this.createText("Welcome");
-    await delay(1000);
     this.createText("Starting the server ...");
     await delay(1250);
     this.createText("You can run several commands:");
 
-    this.createCode("about me", "Who am i and what do i do.");
-    this.createCode("all", "See all commands.");
-    this.createCode("social -a", "All my social networks.");
+    this.createCode("ls", "Lists files and directories within the file system");
+    this.createCode("cd", "Changing into a directory");
+    this.createCode("cat <file-name>", "Read the contents of a file");
+    this.createCode("pwd", "Display the current directory path");
 
     await delay(500);
-    this.newLine();
+    this.newLine(this.state.path);
   };
 
-  newLine = () => {
+  newLine = (path) => {
     const p = document.createElement("p");
     const span1 = document.createElement("span");
     const span2 = document.createElement("span");
@@ -37,7 +36,7 @@ export default class TerminalWindow extends React.Component {
     p.setAttribute("class", "path");
     p.textContent = "# user";
     span1.textContent = " in";
-    span2.textContent = " ~/sujeev-uthayakumar";
+    span2.textContent = `~/${path}`;
     p.appendChild(span1);
     p.appendChild(span2);
     this.element.appendChild(p);
@@ -63,7 +62,7 @@ export default class TerminalWindow extends React.Component {
       this.removeInput();
       await delay(750);
 
-      this.newLine();
+      this.newLine(this.state.path);
     }
   };
 
