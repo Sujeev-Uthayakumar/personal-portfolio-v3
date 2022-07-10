@@ -2,7 +2,8 @@ import axios from "axios";
 import { Tree } from "../helpers/treeFunctions";
 
 // TODO Create tree for filesystem
-export function createFileSystem() {
+export async function createFileSystem() {
+  const projectData = await createProjects();
   const root = new Tree("root");
 
   root.createChildNode("welcome", false);
@@ -10,6 +11,10 @@ export function createFileSystem() {
 
   // Project directory
   root.createChildNode("projects", true);
+  for (let i = 0; i < projectData.length; i++) {
+    const { name } = projectData[i];
+    root.getChildNode("projects").createChildNode(name, false);
+  }
 
   // Social directory
   root.createChildNode("socials", true);
@@ -23,7 +28,6 @@ export function createFileSystem() {
   root.getChildNode("skills").createChildNode("other", false);
 
   root.print();
-  createProjects();
 }
 
 // TODO Map the projects to the file directory
