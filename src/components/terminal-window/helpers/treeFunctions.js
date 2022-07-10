@@ -13,7 +13,6 @@ const uniqueId = (() => {
 })();
 
 // TODO Refactor to use fileSystem names
-// TODO Add data property
 export class Tree {
   #children = new Map();
   #parent = null;
@@ -55,7 +54,7 @@ export class Tree {
     return this.#parent;
   }
 
-  set data(data) {
+  setData(data) {
     this.#data = data;
   }
 

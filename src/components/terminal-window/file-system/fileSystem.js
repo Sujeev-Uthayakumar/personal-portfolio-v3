@@ -1,19 +1,27 @@
 import axios from "axios";
 import { Tree } from "../helpers/treeFunctions";
 
-// TODO Create tree for filesystem
+// TODO Add data for the file system
 export async function createFileSystem() {
   const projectData = await createProjects();
   const root = new Tree("root");
 
   root.createChildNode("welcome", false);
+  root.getChildNode("welcome").setData("Welcome to my personal portfolio");
+
   root.createChildNode("about", false);
+  root
+    .getChildNode("about")
+    .setData(
+      "Hello! My name is Sujeev Uthayakumar and i'm currently in the 3rd year Bachelors of Science in Software Engineering. I'm hoping to complete a further specialization into the Internet of Things (IOT). I love coding, and learning new languages and frameworks to further advance my abilities of software development. Currently, passionate about writing Python scripts for Raspberry Pi based computers. Anxious to learn and approach any new undertaking with an open mind. My future aspirations include becoming a fully realized software engineer, and plan to graduate in the 2023 graduation year. My desire is to continue learning and developing my abilities, to be able to create and cultivate new ideas through code."
+    );
 
   // Project directory
   root.createChildNode("projects", true);
   for (let i = 0; i < projectData.length; i++) {
-    const { name } = projectData[i];
+    const { name, description } = projectData[i];
     root.getChildNode("projects").createChildNode(name, false);
+    root.getChildNode("projects").getChildNode(name).setData(description);
   }
 
   // Social directory
@@ -30,7 +38,6 @@ export async function createFileSystem() {
   root.print();
 }
 
-// TODO Map the projects to the file directory
 async function createProjects() {
   const response = [];
   const { data } = await axios.get(

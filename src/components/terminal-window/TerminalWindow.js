@@ -4,6 +4,7 @@ import { createFileSystem } from "./file-system/fileSystem";
 import "./TerminalWindow.css";
 
 export default class TerminalWindow extends React.Component {
+  // TODO Find way to store path
   state = { path: "" };
   element = null;
 
@@ -11,11 +12,13 @@ export default class TerminalWindow extends React.Component {
     document.addEventListener("keydown", this.onEnter);
     this.onStartTerminal();
   }
+
   componentDidMount() {
     this.element = document.querySelector("#app");
   }
 
   onStartTerminal = async () => {
+    createFileSystem();
     this.createText("Starting the server ...");
     await delay(1250);
     this.createText("You can run several commands:");
@@ -67,6 +70,7 @@ export default class TerminalWindow extends React.Component {
     }
   };
 
+  // TODO Parse through the value and perform actions
   getInputValue = () => {
     const inputValue = document.querySelector("#terminalInput").value;
     if (inputValue) {
@@ -95,8 +99,8 @@ export default class TerminalWindow extends React.Component {
     this.element.appendChild(p);
   };
 
+  // TODO Cleanup terminal window, with the ability to close the terminal
   render = () => {
-    createFileSystem();
     return (
       <div className="container" onClick={containerFocus}>
         <div className="top-bar">
