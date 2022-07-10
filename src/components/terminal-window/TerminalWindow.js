@@ -1,5 +1,6 @@
 import React from "react";
 import { delay, containerFocus } from "./helpers/terminalFunctions";
+import { createFileSystem } from "./file-system/fileSystem";
 import "./TerminalWindow.css";
 
 export default class TerminalWindow extends React.Component {
@@ -95,6 +96,7 @@ export default class TerminalWindow extends React.Component {
   };
 
   render = () => {
+    createFileSystem();
     return (
       <div className="container" onClick={containerFocus}>
         <div className="top-bar">
