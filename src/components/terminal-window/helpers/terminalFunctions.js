@@ -8,3 +8,11 @@ export const containerFocus = () => {
     input.focus();
   }
 };
+
+export const parseValue = (value) => {
+  if (value[0] === "ls") {
+    return true;
+  } else {
+    return false;
+  }
+};

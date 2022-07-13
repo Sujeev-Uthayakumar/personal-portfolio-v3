@@ -15,7 +15,6 @@ export async function createFileSystem() {
     .setData(
       "Hello! My name is Sujeev Uthayakumar and i'm currently in the 3rd year Bachelors of Science in Software Engineering. I'm hoping to complete a further specialization into the Internet of Things (IOT). I love coding, and learning new languages and frameworks to further advance my abilities of software development. Currently, passionate about writing Python scripts for Raspberry Pi based computers. Anxious to learn and approach any new undertaking with an open mind. My future aspirations include becoming a fully realized software engineer, and plan to graduate in the 2023 graduation year. My desire is to continue learning and developing my abilities, to be able to create and cultivate new ideas through code."
     );
-
   // Project directory
   root.createChildNode("projects", true);
   for (let i = 0; i < projectData.length; i++) {
@@ -27,7 +26,15 @@ export async function createFileSystem() {
   // Social directory
   root.createChildNode("socials", true);
   root.getChildNode("socials").createChildNode("linkedin", false);
+  root
+    .getChildNode("socials")
+    .getChildNode("linkedin")
+    .setData("https://www.linkedin.com/in/sujeev-uthayakumar-83497b149/");
   root.getChildNode("socials").createChildNode("github", false);
+  root
+    .getChildNode("socials")
+    .getChildNode("github")
+    .setData("https://github.com/Sujeev-Uthayakumar");
 
   // Skill directory
   root.createChildNode("skills", true);
@@ -36,6 +43,7 @@ export async function createFileSystem() {
   root.getChildNode("skills").createChildNode("other", false);
 
   root.print();
+  return root;
 }
 
 async function createProjects() {

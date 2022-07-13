@@ -1,5 +1,5 @@
 import React from "react";
-import { delay, containerFocus } from "./helpers/terminalFunctions";
+import { delay, containerFocus, parseValue } from "./helpers/terminalFunctions";
 import { createFileSystem } from "./file-system/fileSystem";
 import "./TerminalWindow.css";
 
@@ -7,6 +7,7 @@ export default class TerminalWindow extends React.Component {
   // TODO Find way to store path
   state = { path: "" };
   element = null;
+  fileSystem;
 
   componentWillUnmount() {
     document.addEventListener("keydown", this.onEnter);
@@ -18,7 +19,7 @@ export default class TerminalWindow extends React.Component {
   }
 
   onStartTerminal = async () => {
-    createFileSystem();
+    this.fileSystem = createFileSystem();
     this.createText("Starting the server ...");
     await delay(1250);
     this.createText("You can run several commands:");
@@ -74,8 +75,15 @@ export default class TerminalWindow extends React.Component {
   getInputValue = () => {
     const inputValue = document.querySelector("#terminalInput").value;
     if (inputValue) {
-      this.createCode(inputValue, "test");
-      console.log(inputValue);
+      const inputArray = inputValue.split(" ");
+      if (inputArray.length === 2) {
+        this.fileSystem.print();
+        parseValue(inputArray);
+        this.createCode(inputValue);
+        console.log(inputArray);
+      } else {
+        this.createCode(inputValue, "Try a different command");
+      }
     }
   };
 
