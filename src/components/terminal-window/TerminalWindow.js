@@ -1,6 +1,5 @@
 import React from "react";
 import { delay, containerFocus, parseValue } from "./helpers/terminalFunctions";
-import { createFileSystem } from "./file-system/fileSystem";
 import "./TerminalWindow.css";
 
 export default class TerminalWindow extends React.Component {
@@ -19,7 +18,6 @@ export default class TerminalWindow extends React.Component {
   }
 
   onStartTerminal = async () => {
-    this.fileSystem = createFileSystem();
     this.createText("Starting the server ...");
     await delay(1250);
     this.createText("You can run several commands:");
