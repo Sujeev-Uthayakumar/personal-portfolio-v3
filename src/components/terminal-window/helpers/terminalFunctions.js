@@ -10,7 +10,7 @@ export const containerFocus = () => {
 };
 
 export const parseValue = (value) => {
-  if (value[0] === "ls") {
+  if (value === "ls") {
     return true;
   } else {
     return false;

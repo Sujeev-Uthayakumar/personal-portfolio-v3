@@ -3,10 +3,8 @@ import { delay, containerFocus, parseValue } from "./helpers/terminalFunctions";
 import "./TerminalWindow.css";
 
 export default class TerminalWindow extends React.Component {
-  // TODO Find way to store path
-  state = { path: "" };
   element = null;
-  fileSystem;
+  state = { terminalActive: true };
 
   componentWillUnmount() {
     document.addEventListener("keydown", this.onEnter);
@@ -22,10 +20,11 @@ export default class TerminalWindow extends React.Component {
     await delay(1250);
     this.createText("You can run several commands:");
 
-    this.createCode("ls", "Lists files and directories within the file system");
-    this.createCode("cd", "Changing into a directory");
-    this.createCode("cat <file-name>", "Read the contents of a file");
-    this.createCode("pwd", "Display the current directory path");
+    this.createCode("welcome", "The purpose of my website");
+    this.createCode("about", "A brief description about myself");
+    this.createCode("projects", "The projects that I have worked on");
+    this.createCode("socials", "All my social media links");
+    this.createCode("skills", "A list of skills that I have attained");
 
     await delay(500);
     this.newLine(this.state.path);
@@ -39,7 +38,7 @@ export default class TerminalWindow extends React.Component {
     p.setAttribute("class", "path");
     p.textContent = "# user";
     span1.textContent = " in";
-    span2.textContent = `~/${path}`;
+    span2.textContent = `~/home`;
     p.appendChild(span1);
     p.appendChild(span2);
     this.element.appendChild(p);
@@ -57,31 +56,40 @@ export default class TerminalWindow extends React.Component {
   };
 
   onEnter = async (event) => {
-    const inputValue = document.querySelector("#terminalInput").value;
-    if (event.key === "Enter" && inputValue) {
-      await delay(750);
-      this.getInputValue();
+    try {
+      const inputValue = document.querySelector("#terminalInput").value;
 
-      this.removeInput();
-      await delay(750);
+      if (event.key === "Enter" && inputValue) {
+        await delay(750);
+        this.getInputValue();
 
-      this.newLine(this.state.path);
+        this.removeInput();
+        await delay(750);
+
+        this.newLine(this.state.path);
+      }
+    } catch (error) {
+      console.log("Clicking too fast");
     }
   };
 
   // TODO Parse through the value and perform actions
   getInputValue = () => {
-    const inputValue = document.querySelector("#terminalInput").value;
-    if (inputValue) {
-      const inputArray = inputValue.split(" ");
-      if (inputArray.length === 2) {
-        this.fileSystem.print();
-        parseValue(inputArray);
-        this.createCode(inputValue);
-        console.log(inputArray);
-      } else {
-        this.createCode(inputValue, "Try a different command");
+    try {
+      const inputValue = document.querySelector("#terminalInput").value;
+
+      if (inputValue) {
+        const inputArray = inputValue.split(" ");
+        if (inputArray.length === 1) {
+          parseValue(inputArray);
+          this.createCode(inputValue);
+          console.log(inputArray);
+        } else {
+          this.createCode(inputValue, "Try a different command");
+        }
       }
+    } catch (error) {
+      console.log("Clicking too fast");
     }
   };
 
@@ -105,13 +113,19 @@ export default class TerminalWindow extends React.Component {
     this.element.appendChild(p);
   };
 
-  // TODO Cleanup terminal window, with the ability to close the terminal
+  closeTerminal = (event) => {
+    this.setState({ terminalActive: false });
+  };
+
   render = () => {
     return (
-      <div className="container" onClick={containerFocus}>
+      <div
+        className={!this.state.terminalActive ? "display-none" : "container"}
+        onClick={containerFocus}
+      >
         <div className="top-bar">
           <div className="button-container">
-            <div className="button red"></div>
+            <div className="button red" onClick={this.closeTerminal}></div>
             <div className="button yellow"></div>
             <div className="button green"></div>
           </div>

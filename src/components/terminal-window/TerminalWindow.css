@@ -185,3 +185,7 @@ input:focus {
   padding: 8px;
   overflow: auto;
 }
+
+.display-none {
+  display: none;
+}
