@@ -5,6 +5,7 @@ import "./TerminalWindow.css";
 export default class TerminalWindow extends React.Component {
   element = null;
   state = { terminalActive: true };
+  valueInput = null;
 
   componentWillUnmount() {
     document.addEventListener("keydown", this.onEnter);
@@ -16,6 +17,7 @@ export default class TerminalWindow extends React.Component {
   }
 
   onStartTerminal = async () => {
+    console.log(this.valueInput);
     this.createText("Starting the server ...");
     await delay(1250);
     this.createText("You can run several commands:");
@@ -56,40 +58,37 @@ export default class TerminalWindow extends React.Component {
   };
 
   onEnter = async (event) => {
-    try {
-      const inputValue = document.querySelector("#terminalInput").value;
+    const inputValue = document.querySelector("#terminalInput").value;
 
-      if (event.key === "Enter" && inputValue) {
-        await delay(750);
-        this.getInputValue();
+    if (event.key === "Enter" && inputValue) {
+      await delay(750);
+      this.getInputValue();
 
-        this.removeInput();
-        await delay(750);
+      this.removeInput();
+      await delay(750);
 
-        this.newLine(this.state.path);
-      }
-    } catch (error) {
-      console.log("Clicking too fast");
+      this.newLine(this.state.path);
     }
   };
 
   // TODO Parse through the value and perform actions
   getInputValue = () => {
-    try {
-      const inputValue = document.querySelector("#terminalInput").value;
+    const inputValue = document.querySelector("#terminalInput").value;
 
-      if (inputValue) {
-        const inputArray = inputValue.split(" ");
-        if (inputArray.length === 1) {
-          parseValue(inputArray);
-          this.createCode(inputValue);
-          console.log(inputArray);
+    if (inputValue) {
+      const inputArray = inputValue.split(" ");
+      if (inputArray.length === 1) {
+        const printText = parseValue(inputArray);
+        if (printText.text) {
+          this.createCode(inputValue, printText.text);
         } else {
-          this.createCode(inputValue, "Try a different command");
+          printText.forEach((element) => {
+            console.log(element);
+          });
         }
+      } else {
+        this.createText(inputValue, "Try a different command");
       }
-    } catch (error) {
-      console.log("Clicking too fast");
     }
   };
 
@@ -112,6 +111,16 @@ export default class TerminalWindow extends React.Component {
     p.innerHTML = `${code} <br/><span class='text'> ${text} </span>`;
     this.element.appendChild(p);
   };
+
+  // TODO Need this for socials command
+  createLink(link, text) {
+    const a = document.createElement("a");
+    a.setAttribute("class", "code");
+    a.setAttribute("class", "link");
+    a.setAttribute("href", link);
+    a.innerHTML = `${text} <br/><span class='text'> ${link} </span>`;
+    this.element.appendChild(a);
+  }
 
   closeTerminal = (event) => {
     this.setState({ terminalActive: false });

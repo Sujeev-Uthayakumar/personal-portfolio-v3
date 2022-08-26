@@ -4,7 +4,9 @@
   box-sizing: border-box;
   font-family: "Noto Sans Mono", monospace;
 }
-
+a:-webkit-any-link {
+  color: pink;
+}
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -109,6 +111,11 @@ h2 {
 p.code {
   color: #66c2cd;
   margin-left: 8px;
+}
+
+p.link {
+  color: #66c2cd;
+  text-decoration: underline;
 }
 
 span.text {
