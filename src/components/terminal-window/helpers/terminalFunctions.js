@@ -40,31 +40,29 @@ const terminalData = {
   projects: "dad",
   socials: [
     {
-      linkedin: {
-        href: "https://www.linkedin.com/in/sujeev-uthayakumar-83497b149/",
-        text: "LinkedIn",
-      },
+      href: "https://www.linkedin.com/in/sujeev-uthayakumar-83497b149/",
+      text: "LinkedIn",
     },
     {
-      github: {
-        href: "https://github.com/Sujeev-Uthayakumar",
-        text: "GitHub",
-      },
+      href: "https://github.com/Sujeev-Uthayakumar",
+      text: "GitHub",
     },
   ],
-  skills: {
-    languages: {
-      text: "C++, Python, Java, Javascript, Typescript, HTML, CSS",
+  skills: [
+    {
+      languages: "C++, Python, Java, Javascript, Typescript, HTML, CSS",
     },
-    databases: {
-      text: "SQL, NoSQL, MongoDB, MySQL",
+    {
+      databases: "SQL, NoSQL, MongoDB, MySQL",
     },
-    frameworks: {
-      text: "Bootstrap 5, React.js, Express.js, Jest, Socket.io, Redux, Cypress, Angular, Spring Boot",
+    {
+      frameworks:
+        "Bootstrap 5, React.js, Express.js, Jest, Socket.io, Redux, Cypress, Angular, Spring Boot",
     },
-    other: {
-      text: "Node.js, Git, GitHub, GitLab, Maven, Linux, Junit, Heroku, Postman, Jenkins, Google Cloud Platform",
+    {
+      other:
+        "Node.js, Git, GitHub, GitLab, Maven, Linux, Junit, Heroku, Postman, Jenkins, Google Cloud Platform",
     },
-  },
+  ],
   all: "dawdawd",
 };

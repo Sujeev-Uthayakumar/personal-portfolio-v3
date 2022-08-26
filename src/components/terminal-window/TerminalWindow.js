@@ -83,7 +83,7 @@ export default class TerminalWindow extends React.Component {
           this.createCode(inputValue, printText.text);
         } else {
           printText.forEach((element) => {
-            console.log(element);
+            this.createLink(element.href, element.text);
           });
         }
       } else {
