@@ -113,6 +113,11 @@ p.code {
   margin-left: 8px;
 }
 
+p.error {
+  color: red;
+  margin-left: 8px;
+}
+
 p.link {
   color: #66c2cd;
   text-decoration: underline;

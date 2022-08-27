@@ -22,11 +22,7 @@ export default class TerminalWindow extends React.Component {
     await delay(1250);
     this.createText("You can run several commands:");
 
-    this.createCode("welcome", "The purpose of my website");
-    this.createCode("about", "A brief description about myself");
-    this.createCode("projects", "The projects that I have worked on");
-    this.createCode("socials", "All my social media links");
-    this.createCode("skills", "A list of skills that I have attained");
+    this.allCommand();
 
     await delay(500);
     this.newLine(this.state.path);
@@ -81,13 +77,16 @@ export default class TerminalWindow extends React.Component {
         const printText = parseValue(inputArray);
         if (printText.text) {
           this.createCode(inputValue, printText.text);
-        } else {
+        } else if (printText === "all") {
+          this.allCommand();
+        } else if (printText[0].content) {
+          console.log(printText);
           printText.forEach((element) => {
-            this.createLink(element.href, element.text);
+            this.createLink(element.content, element.text);
           });
+        } else {
+          this.createError(inputValue, "Try a different command");
         }
-      } else {
-        this.createText(inputValue, "Try a different command");
       }
     }
   };
@@ -112,7 +111,21 @@ export default class TerminalWindow extends React.Component {
     this.element.appendChild(p);
   };
 
-  // TODO Need this for socials command
+  createError = (code, text) => {
+    const p = document.createElement("p");
+    p.setAttribute("class", "error");
+    p.innerHTML = `${code} <br/><span class='text'> ${text} </span>`;
+    this.element.appendChild(p);
+  };
+
+  allCommand = () => {
+    this.createCode("welcome", "The purpose of my website");
+    this.createCode("about", "A brief description about myself");
+    this.createCode("projects", "The projects that I have worked on");
+    this.createCode("socials", "All my social media links");
+    this.createCode("skills", "A list of skills that I have attained");
+  };
+
   createLink(link, text) {
     const a = document.createElement("a");
     a.setAttribute("class", "code");
