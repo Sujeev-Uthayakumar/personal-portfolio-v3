@@ -141,24 +141,29 @@ export default class TerminalWindow extends React.Component {
   render = () => {
     if (this.state.terminalActive) {
       return (
-        <div
-          className={!this.state.terminalActive ? "display-none" : "container"}
-          onClick={containerFocus}
-        >
-          <div className="top-bar">
-            <div className="button-container">
-              <div className="button red" onClick={this.closeTerminal}></div>
-              <div className="button yellow"></div>
-              <div className="button green"></div>
+        <>
+          <div
+            className={
+              !this.state.terminalActive ? "display-none" : "container"
+            }
+            onClick={containerFocus}
+          >
+            <div className="top-bar">
+              <div className="button-container">
+                <div className="button red" onClick={this.closeTerminal}></div>
+                <div className="button yellow"></div>
+                <div className="button green"></div>
+              </div>
+              <div className="title">
+                <a href="https://github.com/Sujeev-Uthayakumar">
+                  <h1>github.com/sujeev-uthayakumar</h1>
+                </a>
+              </div>
             </div>
-            <div className="title">
-              <a href="https://github.com/Sujeev-Uthayakumar">
-                <h1>github.com/sujeev-uthayakumar</h1>
-              </a>
-            </div>
+            <div id="app"></div>
           </div>
-          <div id="app"></div>
-        </div>
+          <div className="overlay"></div>
+        </>
       );
     }
   };
