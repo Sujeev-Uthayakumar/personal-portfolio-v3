@@ -1,3 +1,5 @@
+import { createProjects } from "../../../apis/projects";
+
 export const delay = (time) => {
   return new Promise((res) => setTimeout(res, time));
 };
@@ -37,7 +39,7 @@ const terminalData = {
   about: {
     text: "Hey there, my name is Sujeev, a Software Engineering student at the Ontario Tech University. I'm currently in the 4th year of my program and working as a Software Developer Intern @ Celestica.",
   },
-  projects: "dad",
+  projects: createProjects(),
   socials: [
     {
       content: "https://www.linkedin.com/in/sujeev-uthayakumar-83497b149/",
