@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// TODO Create request projects request
 export function createProjects() {
   const response = [];
   axios
@@ -10,7 +9,8 @@ export function createProjects() {
         if (
           repository.description &&
           !repository.is_template &&
-          !repository.fork
+          !repository.fork &&
+          repository.name !== "Sujeev-Uthayakumar"
         ) {
           let temp = {};
           temp["content"] = repository.description;
