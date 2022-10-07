@@ -141,7 +141,7 @@ export default class TerminalWindow extends React.Component {
   render = () => {
     if (this.state.terminalActive) {
       return (
-        <>
+        <React.Fragment>
           <div
             className={
               !this.state.terminalActive ? "display-none" : "container"
@@ -163,7 +163,7 @@ export default class TerminalWindow extends React.Component {
             <div id="app"></div>
           </div>
           <div className="overlay"></div>
-        </>
+        </React.Fragment>
       );
     }
   };
