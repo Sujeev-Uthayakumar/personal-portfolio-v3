@@ -67,7 +67,6 @@ export default class TerminalWindow extends React.Component {
     }
   };
 
-  // TODO Parse through the value and perform actions
   getInputValue = () => {
     const inputValue = document.querySelector("#terminalInput").value;
 
