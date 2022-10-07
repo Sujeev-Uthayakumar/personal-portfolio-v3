@@ -13,12 +13,12 @@ export function createProjects() {
           repository.name !== "Sujeev-Uthayakumar"
         ) {
           let temp = {};
-          temp["content"] = repository.description;
-          temp["text"] = repository.name;
+          temp["text"] = repository.description;
+          temp["content"] = repository.html_url;
           response.push(temp);
         }
       }
     });
-  console.log(response);
+
   return response;
 }

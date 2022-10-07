@@ -131,7 +131,7 @@ export default class TerminalWindow extends React.Component {
     a.setAttribute("class", "code");
     a.setAttribute("class", "link");
     a.setAttribute("href", link);
-    a.innerHTML = `${text} <br/><span class='text'> ${link} </span>`;
+    a.innerHTML = `${link} <br/><span class='text'> ${text} </span>`;
     this.element.appendChild(a);
   }
 
