@@ -144,7 +144,9 @@ export default class TerminalWindow extends React.Component {
         <React.Fragment>
           <div
             className={
-              !this.state.terminalActive ? "display-none" : "container"
+              !this.state.terminalActive
+                ? "display-none"
+                : "terminal-container container"
             }
             onClick={containerFocus}
           >
