@@ -144,9 +144,7 @@ export default class TerminalWindow extends React.Component {
         <React.Fragment>
           <div
             className={
-              !this.state.terminalActive
-                ? "display-none"
-                : "terminal-container container"
+              !this.state.terminalActive ? "display-none" : "terminal-container"
             }
             onClick={containerFocus}
           >
@@ -158,7 +156,7 @@ export default class TerminalWindow extends React.Component {
               </div>
               <div className="title">
                 <a href="https://github.com/Sujeev-Uthayakumar">
-                  <h1>github.com/sujeev-uthayakumar</h1>
+                  github.com/sujeev-uthayakumar
                 </a>
               </div>
             </div>
