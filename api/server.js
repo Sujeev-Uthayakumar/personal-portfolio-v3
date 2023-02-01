@@ -6,6 +6,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+require("dotenv").config();
+
 app.get("/", (req, res) => {
   res.send("Hello world");
 });
