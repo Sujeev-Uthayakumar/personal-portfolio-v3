@@ -7,13 +7,14 @@ export default class TerminalWindow extends React.Component {
   state = { terminalActive: true };
   valueInput = null;
 
-  componentWillUnmount() {
+  componentWillMount() {
     document.addEventListener("keydown", this.onEnter);
-    this.onStartTerminal();
   }
 
   componentDidMount() {
     this.element = document.querySelector("#app");
+    this.onStartTerminal();
+    console.log(this.element);
   }
 
   onStartTerminal = async () => {
