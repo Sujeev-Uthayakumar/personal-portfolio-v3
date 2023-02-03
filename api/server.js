@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 require("dotenv").config();
 
 app.get("/", (req, res) => {
+  console.log(process.env.SECRET);
   res.send("Hello world");
 });
 
