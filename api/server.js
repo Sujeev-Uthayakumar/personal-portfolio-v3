@@ -1,15 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const keys = require("./config/keys");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-require("dotenv").config();
-
 app.get("/", (req, res) => {
-  console.log(process.env.SECRET);
   res.send("Hello world");
 });
 
