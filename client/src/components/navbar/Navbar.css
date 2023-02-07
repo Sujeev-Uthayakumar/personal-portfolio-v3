@@ -1,0 +1,34 @@
+:root {
+  --main: #5e88bf;
+  --secondary: #1f3140;
+  --tertiary: #6b98bf;
+  --accentone: #0d1c26;
+  --accenttwo: #617c8c;
+}
+
+.nav-item {
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+}
+
+.nav-link-custom {
+  font-weight: 700 !important;
+  font-size: 13px !important;
+}
+
+.navbar-custom {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  background-color: transparent !important;
+}
+
+.active {
+  color: var(--secondary) !important;
+}
+
+.navbar .sticky {
+  background-color: var(--main) !important;
+}
