@@ -27,22 +27,22 @@ const Navbar = () => {
                 aria-current="page"
                 href="#"
               >
-                ABOUT
+                <span className="heading-number">01.</span> ABOUT
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link nav-link-custom" href="#">
-                EXPERIENCE
+                <span className="heading-number">02.</span> EXPERIENCE
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link nav-link-custom" href="#">
-                WORK
+                <span className="heading-number">03.</span> PROJECTS
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link nav-link-custom" href="#">
-                CONTACT
+                <span className="heading-number">04.</span> CONTACT
               </a>
             </li>
           </ul>
