@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --fz-xxs: 12px;
+  --fz-xs: 13px;
+  --fz-sm: 14px;
+  --fz-md: 16px;
+  --fz-lg: 18px;
+  --fz-xl: 20px;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+}
+
 .main-section {
   height: 100vh;
 }
@@ -20,6 +30,39 @@ section {
   background-size: cover;
 }
 
+/* Text Classes */
+.start-text {
+  margin: 0px 0px 30px 4px;
+  font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+  font-family: var(--font-mono);
+  font-weight: 300;
+  color: #5e88bf;
+}
+
+.big-text {
+  color: #6b98bf;
+  margin: 0px;
+  font-size: clamp(30px, 7vw, 70px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.small-text {
+  margin: 20px 0px 0px;
+  max-width: 540px;
+}
+
 /* Typewriter Classes */
 .typewriter {
+  color: #6b98bf;
+  margin: 0px;
+  font-size: clamp(30px, 7vw, 70px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.cursor {
+  color: #0d1c26;
+  font-size: 4vh;
+  font-weight: 800;
 }
