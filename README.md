@@ -11,3 +11,9 @@
 https://www.fiverr.com/mohsinsdk/high-quality-retouch-photo-in-bulk?context_referrer=search_gigs&source=your_recently_viewed_gigs&ref_ctx_id=20fb544ab7b7f596482ae88664f298be&pckg_id=1&pos=2&is_pro=false&context_alg=recently_viewed&context=recommendation&imp_id=e55cd257-9fa5-4033-b02f-e5fd825ab058
 
 https://drive.google.com/drive/folders/1Anyt4NmNps76aet-2Z4qY0NSYl4bJcFx
+
+## Commands
+- Build Client: `npm run build`
+- Deploy Client: `gcloud app deploy client.yaml`
+- Deploy Backend: `gcloud app deploy api.yaml`
+- Deploy Routing: `gcloud app deploy dispatch.yaml`
