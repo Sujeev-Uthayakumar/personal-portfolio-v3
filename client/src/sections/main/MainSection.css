@@ -18,10 +18,6 @@
   height: 100vh;
 }
 
-section {
-  height: 100vh;
-}
-
 .background {
   min-height: 100vh;
   align-items: center;
@@ -50,6 +46,10 @@ section {
 .small-text {
   margin: 20px 0px 0px;
   max-width: 540px;
+}
+
+.highlight-text {
+  color: #617c8c;
 }
 
 /* Button Styling */
@@ -115,7 +115,7 @@ section {
 }
 
 .company-name {
-  color: #6b98bf !important;
+  color: #617c8c !important;
 }
 
 p > a:hover {

@@ -31,7 +31,10 @@ const MainSection = () => {
                   cursorClassName: "cursor",
                 }}
               />
-              <h3 className="big-text">I engineer software for the web.</h3>
+              <h3 className="big-text">
+                I <span className="highlight-text">engineer software</span> for
+                the web.
+              </h3>
               <p className="small-text">
                 I’m a software engineer who's experienced in working on
                 fullstack applications. Currently, I'm focused on gaining as
