@@ -20,7 +20,7 @@ const MainSection = () => {
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
-                    .typeString("Sujeev Uthayakumar")
+                    .typeString("Sujeev Uthayakumar.")
                     .pauseFor(2500)
                     .deleteAll()
                     .start();
@@ -34,10 +34,26 @@ const MainSection = () => {
               <h3 className="big-text">I engineer software for the web.</h3>
               <p className="small-text">
                 I’m a software engineer who's experienced in working on
-                fullstack applicatins. Currently, I'm focused on gaining as much
-                experience as possible working as a Software Engineering Intern
-                at <a href="https://www.celestica.com/">Celestica</a>.
+                fullstack applications. Currently, I'm focused on gaining as
+                much experience as possible working as a Software Engineering
+                Intern at{" "}
+                <a href="https://www.celestica.com/" className="company-name">
+                  Celestica
+                </a>
+                .
               </p>
+              <div>
+                <a href="https://github.com/Sujeev-Uthayakumar">
+                  <button className="main-button hvr-shutter-in-horizontal">
+                    GitHub
+                  </button>
+                </a>
+                <a href="https://www.linkedin.com/in/sujeev-uthayakumar-83497b149/">
+                  <button className="main-button hvr-shutter-in-horizontal">
+                    LinkedIn
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
