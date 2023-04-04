@@ -1,7 +1,17 @@
-.background {
-  background-color: #1f3140;
+:root {
+  --fz-heading: 32px;
 }
 
 section {
-    
+  background-color: #1f3140;
+}
+
+.about-background {
+  padding: 60px 0px;
+}
+
+.numbered-heading {
+  font-weight: 600;
+  font-size: clamp(26px, 5vw, var(--fz-heading));
+  white-space: nowrap;
 }

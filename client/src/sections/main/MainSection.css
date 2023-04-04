@@ -18,7 +18,7 @@
   height: 100vh;
 }
 
-.background {
+.main-background {
   min-height: 100vh;
   align-items: center;
   display: flex;

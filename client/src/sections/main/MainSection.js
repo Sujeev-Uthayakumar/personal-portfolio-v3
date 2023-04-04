@@ -10,7 +10,7 @@ const MainSection = () => {
       style={{
         backgroundImage: `url(${bannerBackground})`,
       }}
-      className="container-fluid background"
+      className="container-fluid main-background"
     >
       <div className="main-section d-flex flex-grow-1  align-items-center">
         <div className="container">
