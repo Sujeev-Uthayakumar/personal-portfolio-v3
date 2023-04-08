@@ -11,7 +11,7 @@ const AboutSection = () => {
       <div className="about-section" id="about">
         <div className="container">
           <div className="row">
-            <h2 className="numbered-heading">a bit about myself</h2>
+            <h2 className="numbered-heading">Bit About Myself</h2>
           </div>
         </div>
       </div>

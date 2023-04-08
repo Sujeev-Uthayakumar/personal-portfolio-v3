@@ -14,10 +14,10 @@ section {
   position: relative;
   counter-increment: section 1;
   content: "0" counter(section) ".";
-  margin-right: 10px;
-  color: #5e88bf;
+  margin-right: 5px;
+  color: #6b98bf;
   font-family: var(--font-mono);
-  font-size: clamp(16px, 5vw, 30px);
+  font-size: clamp(16px, 5vw, 24px);
   font-weight: 600;
 }
 
