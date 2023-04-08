@@ -1,5 +1,5 @@
 :root {
-  --fz-heading: 32px;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 }
 
 section {
@@ -10,8 +10,52 @@ section {
   padding: 60px 0px;
 }
 
-.numbered-heading {
+.numbered-heading::before {
+  position: relative;
+  counter-increment: section 1;
+  content: "0" counter(section) ".";
+  margin-right: 10px;
+  color: #5e88bf;
+  font-family: var(--font-mono);
+  font-size: clamp(16px, 3vw, 26px);
   font-weight: 600;
-  font-size: clamp(26px, 5vw, var(--fz-heading));
+}
+
+.numbered-heading {
+  color: #ccd6f6;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  font-weight: 400;
+  font-size: clamp(16px, 5vw, 32px);
   white-space: nowrap;
+}
+
+.numbered-heading::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 400px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: #617c8c;
+}
+
+@media (max-width: 1080px) {
+  .numbered-heading::after {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .numbered-heading::after {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .numbered-heading::after {
+    margin-left: 10px;
+  }
 }
