@@ -8,7 +8,7 @@ const AboutSection = () => {
       style={{ backgroundColor: "#1f3140" }}
       className="container-fluid about-background"
     >
-      <div className="about-section">
+      <div className="about-section" id="about">
         <div className="container">
           <div className="row">
             <h2 className="numbered-heading">a bit about myself</h2>

@@ -17,19 +17,21 @@ section {
   margin-right: 10px;
   color: #5e88bf;
   font-family: var(--font-mono);
-  font-size: clamp(16px, 3vw, 26px);
+  font-size: clamp(16px, 5vw, 30px);
   font-weight: 600;
 }
 
 .numbered-heading {
+  width: 100%;
   color: #ccd6f6;
   display: flex;
   -webkit-box-align: center;
   align-items: center;
   position: relative;
   font-weight: 400;
-  font-size: clamp(16px, 5vw, 32px);
+  font-size: clamp(16px, 5vw, 28px);
   white-space: nowrap;
+  margin: 10px 0px 40px;
 }
 
 .numbered-heading::after {

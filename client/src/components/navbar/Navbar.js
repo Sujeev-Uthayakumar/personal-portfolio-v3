@@ -25,7 +25,7 @@ const Navbar = () => {
               <a
                 className="nav-link nav-link-custom"
                 aria-current="page"
-                href="#"
+                href="#about"
               >
                 <span className="heading-number">01.</span> ABOUT
               </a>
