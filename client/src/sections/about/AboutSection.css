@@ -19,14 +19,21 @@ section {
   padding: 30px;
 }
 
+ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
 .about-image {
+  padding: 15px;
   width: 100%;
   max-width: 400px;
   height: auto;
   border-radius: 5px;
   margin: 0 auto;
   display: block;
-  box-shadow: 0 10px 30px -15px #617d8a;
+  /* box-shadow: 0 10px 30px -15px #617d8a; */
 }
 
 .numbered-heading::before {
