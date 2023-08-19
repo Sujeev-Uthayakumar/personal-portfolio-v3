@@ -16,9 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: dir
-        run: ls
-
       - name: Deploy to App Engine
         uses: google-github-actions/deploy-appengine@v0.2.0
         with:

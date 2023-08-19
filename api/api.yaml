@@ -1,4 +1,2 @@
 runtime: nodejs16
 service: api
-includes:
-  - env_variables.yaml
