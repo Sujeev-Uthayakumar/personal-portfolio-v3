@@ -11,11 +11,11 @@ jobs:
   deploy-api:
     name: Deploy API to Google Cloud
     runs-on: ubuntu-latest
+    run: ls
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      run: ls
 
     - name: Deploy to App Engine
       uses: google-github-actions/deploy-appengine@v0.2.0
