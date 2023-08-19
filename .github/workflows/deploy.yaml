@@ -1,13 +1,41 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+name: Deploy Personal Portfolio V3
+run-name: ${{ github.actor }} is deploying to Google Appengine
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
-  check-bats-version:
+  deploy-api:
+    name: Deploy API to Google Cloud
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "14"
-      - run: npm install -g bats
-      - run: bats -v
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Deploy to App Engine
+      uses: google-github-actions/deploy-appengine@v0.2.0
+      with:
+        deliverables: './api/api.yaml'
+        version: v1
+        project_id: ${{ secrets.GCP_PROJECT }}
+        credentials: ${{ secrets.GCP_CREDENTIALS }}
+  
+  # deploy-client:
+  #   name: Deploy Client to Google Cloud
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v2
+
+  #   - name: Deploy to App Engine
+  #    uses: google-github-actions/deploy-appengine@v0.2.0
+  #     with:
+  #       deliverables: './client/client.yaml'
+  #       version: v1
+  #       project_id: ${{ secrets.GCP_PROJECT }}
+  #       credentials: ${{ secrets.GCP_CREDENTIALS }}
