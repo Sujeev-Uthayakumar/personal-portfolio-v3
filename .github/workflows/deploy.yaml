@@ -43,6 +43,8 @@ jobs:
       - name: Build
         working-directory: ./client
         run: npm run build
+        env:
+          CI: false
 
       - name: Deploy to App Engine
         uses: google-github-actions/deploy-appengine@v0.2.0
