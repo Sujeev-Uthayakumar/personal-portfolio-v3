@@ -1,4 +1,5 @@
 import "./ProjectSection.css";
+import "../../components/project-card/ProjectCard";
 
 function ProjectSection() {
   return (

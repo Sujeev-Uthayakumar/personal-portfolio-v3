@@ -17,7 +17,7 @@
   font-size: 13px !important;
 }
 
-.navbar-custom {
+.sticky .navbar-custom {
   padding-left: 1.5rem !important;
   padding-right: 1.5rem !important;
   padding-top: 1rem !important;
@@ -36,3 +36,4 @@
 .heading-number {
   color: var(--accenttwo);
 }
+/*TODO: figure out the sticky css*/
