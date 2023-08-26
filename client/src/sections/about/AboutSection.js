@@ -1,6 +1,6 @@
 import React from "react";
+import { Timeline, Text } from "@mantine/core";
 
-import profilePicture from "../../assets/images/profile-picture.jpeg";
 import "./AboutSection.css";
 
 const AboutSection = () => {
@@ -12,39 +12,51 @@ const AboutSection = () => {
       <div className="about-section" id="about">
         <div className="container">
           <div className="row">
-            <h4 className="numbered-heading">About Me</h4>
+            {/* <h4 className="numbered-heading">About Me</h4> */}
             <h2 className="about-header">A bit about myself</h2>
           </div>
           <div className="row about-content">
             <div className="about-text col-sm-7">
               <p>
-                Hello! I'm a software engineer based in the Toronto, Canada. I
-                enjoy creating things that live on the internet, whether that be
-                websites, applications, or anything in between.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
-              <p>
-                I'm always eager to learn new things and expand my knowledge.
-                Outside of building software, I enjoy cooking, traveling and
-                playing basketball.
-              </p>
-              <p>Here are some of the technologies I have worked with:</p>
-              <div>
-                <ul className="columns" data-columns="2">
-                  <li>Java</li>
-                  <li>JavaScript</li>
-                  <li>Node.js</li>
-                  <li>Spring Boot</li>
-                  <li>TypeScript</li>
-                  <li>Angular</li>
-                </ul>
-              </div>
             </div>
             <div className="col-sm-5">
-              <img
-                className="about-image"
-                alt="Standing outside in front of a building"
-                src={profilePicture}
-              />
+              <Timeline active={1} bulletSize={24} lineWidth={2}>
+                <Timeline.Item
+                  bullet={<i class="fa-solid fa-school"></i>}
+                  title="Ontario Tech University - Undergraduate"
+                >
+                  <Text color="dimmed" size="sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.{" "}
+                  </Text>
+                  <Text size="xs" mt={4}>
+                    September, 2019
+                  </Text>
+                </Timeline.Item>
+
+                <Timeline.Item
+                  bullet={<i class="fa-solid fa-briefcase"></i>}
+                  title="Celestica - Software Engineer Intern"
+                >
+                  <Text color="dimmed" size="sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.{" "}
+                  </Text>
+                  <Text size="xs" mt={4}>
+                    May, 2022
+                  </Text>
+                </Timeline.Item>
+              </Timeline>
             </div>
           </div>
         </div>
