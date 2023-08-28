@@ -1,7 +1,12 @@
-section {
+/* section {
   background-color: #6b98bf;
-}
+} */
 
 .project-background {
   padding: 60px 0px;
+}
+
+.project-card {
+  margin-top: 30px !important;
+  margin-bottom: 30px;
 }

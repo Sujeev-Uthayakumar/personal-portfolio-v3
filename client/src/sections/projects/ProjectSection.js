@@ -11,7 +11,20 @@ function ProjectSection() {
             <h2 className="about-header">Recently worked on projects</h2>
           </div>
           <div class="row">
-            <ProjectCard />
+            <ProjectCard
+              className="project-card"
+              commits="3"
+              stars="2"
+              title="Test title"
+              stack="test"
+              link={"https://www.google.com/"}
+            />{" "}
+            <ProjectCard
+              commits="3"
+              stars="2"
+              title="Test title"
+              author="test"
+            />
           </div>
         </div>
       </div>

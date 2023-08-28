@@ -15,6 +15,8 @@ const useStyles = createStyles((theme) => ({
   card: {
     position: "relative",
     height: rem(280),
+    marginTop: rem(20),
+    marginBottom: rem(20),
     backgroundColor:
       theme.colorScheme === "dark"
         ? theme.colors.dark[6]
@@ -66,52 +68,56 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function ProjectCard({ image, title, author, views, comments, link }) {
+export function ProjectCard({ image, title, stack, stars, commits, link }) {
   const { classes, theme } = useStyles();
 
   return (
-    <Card
-      p="lg"
-      shadow="lg"
-      className={classes.card}
-      radius="md"
-      component="a"
-      href={link}
-      target="_blank"
-    >
-      <div
-        className={classes.image}
-        style={{ backgroundImage: `url(${image})` }}
-      />
-      <div className={classes.overlay} />
+    <div className="col-sm-6">
+      <Card
+        p="lg"
+        shadow="lg"
+        className={classes.card}
+        radius="md"
+        component="a"
+        href={link}
+        target="_blank"
+      >
+        <div
+          className={classes.image}
+          style={{ backgroundImage: `url(${image})` }}
+        />
+        <div className={classes.overlay} />
 
-      <div className={classes.content}>
-        <div>
-          <Text size="lg" className={classes.title} weight={500}>
-            {title}
-          </Text>
-
-          <Group position="apart" spacing="xs">
-            <Text size="sm" className={classes.author}>
-              {author}
+        <div className={classes.content}>
+          <div>
+            <Text size="lg" className={classes.title} weight={500}>
+              {title}
             </Text>
 
-            <Group spacing="lg">
-              <Center>
-                <Text size="sm" className={classes.bodyText}>
-                  {views}
-                </Text>
-              </Center>
-              <Center>
-                <Text size="sm" className={classes.bodyText}>
-                  {comments}
-                </Text>
-              </Center>
+            <Group position="apart" spacing="xs">
+              <Text size="sm" className={classes.author}>
+                {stack}
+              </Text>
+
+              <Group spacing="lg">
+                <Center>
+                  <i class="fa-regular fa-star"></i>{" "}
+                  <Text size="sm" className={classes.bodyText}>
+                    {stars}
+                  </Text>
+                </Center>
+                <Center>
+                  <i class="fa-solid fa-code-commit"></i>
+                  <Text size="sm" className={classes.bodyText}>
+                    {commits}
+                  </Text>
+                </Center>
+              </Group>
             </Group>
-          </Group>
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 }
 
