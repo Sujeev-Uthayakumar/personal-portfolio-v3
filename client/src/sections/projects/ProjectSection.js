@@ -15,10 +15,10 @@ function ProjectSection() {
               className="project-card"
               commits="3"
               stars="2"
-              title="Test title"
-              stack="test"
+              title="MNIST Image Recognition"
+              stack="Python, Tensorflow, Keras"
               link={"https://www.google.com/"}
-            />{" "}
+            />
             <ProjectCard
               commits="3"
               stars="2"

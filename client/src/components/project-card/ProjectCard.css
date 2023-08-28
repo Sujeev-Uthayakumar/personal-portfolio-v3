@@ -1,1 +1,59 @@
-/* TODO: Add the css for ProjectCard */
+.css-selector {
+  background: linear-gradient(
+    282deg,
+    #5e88bf,
+    #1f3140,
+    #6b98bf,
+    #0d1c26,
+    #617c8c
+  );
+  background-size: 1000% 1000%;
+  -webkit-animation: AnimationName 49s ease infinite;
+  -moz-animation: AnimationName 49s ease infinite;
+  -o-animation: AnimationName 49s ease infinite;
+  animation: AnimationName 49s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 81%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 81%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 81%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 81%;
+  }
+}
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 0% 81%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 81%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 81%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 81%;
+  }
+}

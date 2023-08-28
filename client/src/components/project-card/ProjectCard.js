@@ -27,12 +27,12 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  image: {
-    ...theme.fn.cover(),
-    ref: getStylesRef("image"),
-    backgroundSize: "cover",
-    transition: "transform 500ms ease",
-  },
+  // image: {
+  //   ...theme.fn.cover(),
+  //   ref: getStylesRef("image"),
+  //   backgroundSize: "cover",
+  //   transition: "transform 500ms ease",
+  // },
 
   overlay: {
     position: "absolute",
@@ -76,7 +76,7 @@ export function ProjectCard({ image, title, stack, stars, commits, link }) {
       <Card
         p="lg"
         shadow="lg"
-        className={classes.card}
+        className={classes.card + " css-selector"}
         radius="md"
         component="a"
         href={link}
@@ -84,7 +84,7 @@ export function ProjectCard({ image, title, stack, stars, commits, link }) {
       >
         <div
           className={classes.image}
-          style={{ backgroundImage: `url(${image})` }}
+          style={{ backgroundColor: `url(${image})` }}
         />
         <div className={classes.overlay} />
 
