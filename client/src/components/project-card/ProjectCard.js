@@ -27,12 +27,12 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
-  // image: {
-  //   ...theme.fn.cover(),
-  //   ref: getStylesRef("image"),
-  //   backgroundSize: "cover",
-  //   transition: "transform 500ms ease",
-  // },
+  image: {
+    ...theme.fn.cover(),
+    ref: getStylesRef("image"),
+    backgroundSize: "cover",
+    transition: "transform 500ms ease",
+  },
 
   overlay: {
     position: "absolute",
@@ -69,7 +69,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function ProjectCard({ image, title, stack, stars, commits, link }) {
-  const { classes, theme } = useStyles();
+  const { classes } = useStyles();
 
   return (
     <div className="col-sm-6">

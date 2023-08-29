@@ -12,7 +12,6 @@ const AboutSection = () => {
       <div className="about-section" id="about">
         <div className="container">
           <div className="row">
-            {/* <h4 className="numbered-heading">About Me</h4> */}
             <h2 className="about-header">A bit about myself</h2>
           </div>
           <div className="row about-content">
